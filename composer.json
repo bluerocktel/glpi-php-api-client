@@ -1,0 +1,27 @@
+{
+    "name": "bluerocktel/glpi-php-api-client",
+    "description": "PHP Client for the GLPI API",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "BlueRockTEL\\Glpi\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Thomas",
+            "email": "thomas@bluerocktel.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.1",
+        "nesbot/carbon": "^2.68",
+        "illuminate/collections": ">=9.0",
+        "saloonphp/saloon": "^3.0",
+        "saloonphp/rate-limit-plugin": "^2.0",
+        "saloonphp/pagination-plugin": "^2.0"
+    },
+    "require-dev": {
+        "spatie/ray": "^1.37"
+    }
+}
