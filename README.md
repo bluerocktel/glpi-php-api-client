@@ -55,7 +55,7 @@ You can now start using the API :
 $response = $api->user()->search(); // list users
 
 var_dump(
-  $response->failed(), // true is the request returned 4xx or 5xx code.
+  $response->failed(), // true if the request returned 4xx or 5xx code.
   $response->json(),   // json response as an array
 );
 ```
@@ -139,7 +139,7 @@ use BlueRockTEL\Glpi\GlpiConnector;
 use BlueRockTEL\Glpi\Resources\TicketResource;
 
 $api = new GlpiConnector(...);
-$resource = new TicketResource($api);
+$resource = new TicketResource($api); // same as $api->ticket()
 
 $ticket = $resource->show($ticketId)->dtoOrFail();
 
@@ -152,7 +152,7 @@ $resource->update($ticket);
 
 ### Responses
 
-Weither you are using Requests or Resources, the response is always an instance of `Saloon\Http\Response` class.
+After issuing a request, the returned response is always an instance of `Saloon\Http\Response` class.
 It provides some useful methods to check the response status and get the response data.
 
 ```php
@@ -166,7 +166,7 @@ $response->headers();
 $response->json(); # as an array
 $response->body(); # as an raw string
 $response->dto(); # as a Data Transfer Object
-$response->dtoOrFail(); # as a Data Transfer Object, throwing an exception if the response status is not 2xx
+$response->dtoOrFail(); # as a Data Transfer Object, throwing exception on 4-5xx status
 ```
 
 You can learn more about responses by reading the [Saloon documentation](https://docs.saloon.dev/the-basics/responses#useful-methods), which this client uses underneath.
