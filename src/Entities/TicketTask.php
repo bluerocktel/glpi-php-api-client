@@ -27,7 +27,7 @@ class TicketTask extends AbstractEntity
         public readonly ?int $actiontime = null,
         public readonly ?string $begin = null,
         public readonly ?string $end = null,
-        public readonly ?string $state = null,
+        public readonly ?int $state = null,
         public readonly ?Carbon $date_mod = null,
         public readonly ?Carbon $date_creation = null,
         public readonly ?int $tasktemplates_id = null,
