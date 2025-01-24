@@ -7,7 +7,7 @@ use Illuminate\Support\Collection;
 use BlueRockTEL\Glpi\Contracts\HasColumnMapping;
 use BlueRockTEL\Glpi\Exceptions\ColumnMappingException;
 
-abstract class GlpiEntity extends Entity implements HasColumnMapping
+abstract class GlpiEntity extends AbstractEntity implements HasColumnMapping
 {
     /**
      * @var null|string<\BlueRockTEL\Glpi\Contracts\EntityMap>

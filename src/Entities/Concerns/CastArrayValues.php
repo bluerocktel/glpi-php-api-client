@@ -66,7 +66,7 @@ trait CastArrayValues
                 'entity' => $value ? $types[$key]::fromArray($value) : null,
                 'enum' => $value ? $types[$key]::from($value) : null,
                 'cast' => $value ? $castClass::from($value, ...$castParameters) : null,
-                'date', 'datetime', 'carbon' => is_a($value, Carbon::class) ? $value : Carbon::parse($value),
+                'date', 'datetime', 'carbon' => is_a($value, Carbon::class) ? $value : ($value ? Carbon::parse($value) : null),
                 default => throw new InvalidCastException(
                     'Invalid cast type `' . $cast[$key] . '` for key `' . $key . '`.'
                 ),
@@ -94,7 +94,7 @@ trait CastArrayValues
         if ($constructor) {
             foreach ($constructor->getParameters() as $parameter) {
                 $paramType = $parameter->getType();
-                if ($paramType) {
+                if ($paramType && !is_a($paramType, \ReflectionUnionType::class)) {
                     $params[$parameter->getName()] = $paramType->getName();
                 }
             }

@@ -17,8 +17,10 @@ enum TicketMap: int implements EntityMap
     case status = 12;
     case date_creation = 15;
     case date_mod = 19;
-    case assigned_id = 4;
-    case applicant_id = 5;
+    // case assigned_id = 4;
+    // case applicant_id = 5;
+    case applicant_id = 4;
+    case assigned_id = 5;
     case group_name = 8;
     case type = 14;
     case solvedate = 17;

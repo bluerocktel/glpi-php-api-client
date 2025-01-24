@@ -32,8 +32,8 @@ class Ticket extends GlpiEntity
         public readonly ?string $group_name = null,
         public readonly ?AttributionType $type = null,
         public readonly ?Carbon $solvedate = null,
-        public readonly ?Carbon $task_actiontime = null,
-        public readonly ?string $task_content = null,
+        public readonly array|int|null $task_actiontime = null,
+        public readonly array|string|null $task_content = null,
     ) {
         //
     }

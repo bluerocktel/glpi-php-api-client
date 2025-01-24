@@ -111,6 +111,11 @@ class GlpiConnector extends Connector implements HasPagination
         };
     }
 
+    public function entity(): Resources\EntityResource
+    {
+        return new Resources\EntityResource($this);
+    }
+
     public function user(): Resources\UserResource
     {
         return new Resources\UserResource($this);

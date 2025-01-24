@@ -4,11 +4,11 @@ namespace BlueRockTEL\Glpi\Entities;
 
 use BlueRockTEL\Glpi\Enums\Boolean;
 use BlueRockTEL\Glpi\Enums\Operator;
-use BlueRockTEL\Glpi\Entities\Entity;
+use BlueRockTEL\Glpi\Entities\AbstractEntity;
 use BlueRockTEL\Glpi\Contracts\EntityMap;
 use BlueRockTEL\Glpi\Contracts\HasGlpiPayload;
 
-class SearchCriteria extends Entity implements HasGlpiPayload
+class SearchCriteria extends AbstractEntity implements HasGlpiPayload
 {
     public function __construct(
         readonly public int|EntityMap $field,
