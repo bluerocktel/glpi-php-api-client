@@ -9,6 +9,13 @@ use Illuminate\Support\Collection;
 
 class UserProfileResource extends Resource
 {
+    public function index(int $userId): Response
+    {
+        return $this->connector->send(
+            new Endpoints\GetUserProfilesRequest($userId)
+        );
+    }
+
     public function store(
         int $userId,
         int $entityId,
@@ -22,6 +29,13 @@ class UserProfileResource extends Resource
                 profileId: $profileId,
                 isRecursive: $isRecursive,
             )
+        );
+    }
+
+    public function delete(int $userProfileId): Response
+    {
+        return $this->connector->send(
+            new Endpoints\DeleteUserProfileRequest($userProfileId)
         );
     }
 }

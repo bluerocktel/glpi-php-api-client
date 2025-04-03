@@ -126,6 +126,11 @@ class GlpiConnector extends Connector implements HasPagination
         return new Resources\ProfileResource($this);
     }
 
+    public function userProfile(): Resources\UserProfileResource
+    {
+        return new Resources\UserProfileResource($this);
+    }
+
     public function ticket(): Resources\TicketResource
     {
         return new Resources\TicketResource($this);
