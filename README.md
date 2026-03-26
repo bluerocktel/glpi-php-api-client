@@ -21,7 +21,7 @@ This package is a light PHP Wrapper / SDK for the [GLPI Project](https://glpi-pr
 
 ## Installation
 
-This library requires PHP `>=8.1`.
+This library requires PHP `>=8.2`.
 
 You can install the package via composer:
 
